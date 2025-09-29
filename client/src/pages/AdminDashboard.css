@@ -1,0 +1,102 @@
+.dashboard-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.dashboard-header h2 {
+  margin: 0;
+  color: #333;
+}
+
+.logout-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #e53e3e;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.items-table th,
+.items-table td {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.items-table th {
+  background-color: #f8f8f8;
+  font-weight: 600;
+  color: #555;
+}
+
+.item-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.action-btn {
+  border: none;
+  padding: 8px 12px;
+  margin-right: 8px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.edit-btn {
+  background-color: #3498db;
+}
+.edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+}
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.create-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 15px;
+}
+.create-btn:hover {
+  background-color: #2980b9;
+}

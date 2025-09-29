@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary-color: #FF6347; /* Energetic Tomato Red */
+  --secondary-color: #FFA500; /* Vibrant Orange */
+  --background-color: #FFF8F0; /* Warm, creamy off-white */
+  --dark-color: #2c2c2c; /* Softer black for text */
+  --light-color: #FFFFFF; /* Pure white for cards */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+/* ... keep the :root variables from above ... */
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--dark-color);
+}
+
+.App-header {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: var(--light-color);
+  padding: 20px 0;
+  width: 100%;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  margin-bottom: 30px;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-family: 'Bebas Neue', sans-serif; /* Our new headline font */
+  font-size: 4.5em; /* Bigger and bolder */
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the top */
+  padding-top: 20px;
+}
+
+
+
+main {
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Basic Loading message styling */
+.App main p {
+  font-size: 1.2em;
+  color: #666;
+  animation: pulse 1.5s infinite alternate; /* Simple pulse animation */
+}
+
+@keyframes pulse {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
+}

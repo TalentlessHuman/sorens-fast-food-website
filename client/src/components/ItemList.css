@@ -1,0 +1,9 @@
+.item-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Increased gap for better spacing */
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Center the item list */
+}
