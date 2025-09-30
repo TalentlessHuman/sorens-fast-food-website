@@ -10,7 +10,8 @@ const HomePage = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/login`);
+        // 👇 This is the line to fix
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/items`);
         setItems(response.data);
         setDisplayedItems(response.data);
       } catch (err) {
@@ -36,6 +37,8 @@ const HomePage = () => {
         sortedItems.sort((a, b) => b.quantity - a.quantity);
         break;
       default:
+        // For 'default', we revert to the original order
+        sortedItems = [...items];
         break;
     }
     setDisplayedItems(sortedItems);
