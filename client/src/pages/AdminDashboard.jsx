@@ -58,7 +58,7 @@ const AdminDashboard = () => {
     try {
       if (currentItem) {
         // --- UPDATE ---
-        const res = await axios.put(`http://localhost:5000/api/items/${currentItem._id}`, formData, config);
+        const res = await axios.put(`${process.env.REACT_APP_API_URL}/api/items/${currentItem._id}`, formData, config);
         setItems(items.map((item) => (item._id === currentItem._id ? res.data : item)));
         alert('Item updated successfully!');
       } else {
@@ -77,7 +77,7 @@ const AdminDashboard = () => {
   const handleDelete = async (itemId) => {
     if (window.confirm('Are you sure you want to delete this item?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/items/${itemId}`);
+        await axios.delete(`${process.env.REACT_APP_API_URL}/api/items/${itemId}`);
         setItems(items.filter((item) => item._id !== itemId));
         alert('Item deleted successfully!');
       } catch (err) {
