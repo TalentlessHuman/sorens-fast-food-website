@@ -26,7 +26,7 @@ const AdminDashboard = () => {
     }
     const fetchItems = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/items');
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/login`);
         setItems(res.data);
       } catch (err) {
         console.error('Error fetching items on dashboard', err);
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
         alert('Item updated successfully!');
       } else {
         // --- CREATE ---
-        const res = await axios.post('http://localhost:5000/api/items', formData, config);
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, formData, config);
         setItems([...items, res.data]);
         alert('Item added successfully!');
       }

@@ -10,7 +10,7 @@ const HomePage = () => {
   useEffect(() => {
     const fetchItems = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/items');
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/login`);
         setItems(response.data);
         setDisplayedItems(response.data);
       } catch (err) {
