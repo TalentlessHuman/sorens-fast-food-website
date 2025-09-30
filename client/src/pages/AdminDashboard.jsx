@@ -63,7 +63,7 @@ const AdminDashboard = () => {
         alert('Item updated successfully!');
       } else {
         // --- CREATE ---
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, formData, config);
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/items`, formData, config);
         setItems([...items, res.data]);
         alert('Item added successfully!');
       }

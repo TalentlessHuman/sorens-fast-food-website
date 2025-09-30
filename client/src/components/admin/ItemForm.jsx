@@ -14,7 +14,7 @@ const ItemForm = ({ itemToEdit, onSave, onClose }) => {
       setPrice(itemToEdit.price);
       setQuantity(itemToEdit.quantity);
       if (itemToEdit.imageUrl) {
-        setPreview(`http://localhost:5000${itemToEdit.imageUrl}`);
+        setPreview(`${process.env.REACT_APP_API_URL}${itemToEdit.imageUrl}`); // ✅ Uses environment variable
       }
     }
   }, [itemToEdit]);
