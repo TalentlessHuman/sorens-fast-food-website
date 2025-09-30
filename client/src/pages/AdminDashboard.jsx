@@ -26,10 +26,10 @@ const AdminDashboard = () => {
     }
     const fetchItems = async () => {
       try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/auth/login`);
+        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/items`);
         setItems(res.data);
       } catch (err) {
-        console.error('Error fetching items on dashboard', err);
+        console.error('CRITICAL DASHBOARD ERROR:', err.response);
         handleLogout();
       }
     };
