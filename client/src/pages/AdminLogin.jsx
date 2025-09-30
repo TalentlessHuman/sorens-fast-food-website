@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; // 👈 Import useNavigate
+import { useNavigate } from 'react-router-dom';
+import setAuthToken from '../utils/setAuthToken'; // 👈 1. Import setAuthToken
 import './AdminLogin.css';
 
 const AdminLogin = () => {
-  const navigate = useNavigate(); // 👈 Initialize navigate
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -23,19 +24,21 @@ const AdminLogin = () => {
         password,
       });
       
-      // 👇 Save the token and redirect
-      localStorage.setItem('token', res.data.token);
+      const { token } = res.data; // 👈 2. Get the token from the response
+
+      localStorage.setItem('token', token);
+      setAuthToken(token); // 👈 3. CRITICAL: Set the token for all future axios requests NOW
+
       navigate('/admin/dashboard');
 
     } catch (err) {
       console.error('Login error:', err.response.data);
       localStorage.removeItem('token');
-      alert('Login Failed: ' + err.response.data.msg);
+      alert('Login Failed: ' + (err.response?.data?.msg || 'Server Error'));
     }
   };
 
   return (
-    // ... JSX for the form remains the same
     <div className="login-container">
       <form className="login-form" onSubmit={onSubmit}>
         <h2>Admin Login</h2>
